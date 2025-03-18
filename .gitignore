@@ -1,0 +1,23 @@
+## Build generated
+build/
+DerivedData/
+
+# Fastlane
+fastlane/test_output/
+
+## Xcode
+xcuserdata
+
+## SPM
+.swiftpm/configuration/registries.json
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+/Packages
+
+## Bundler
+.bundle/
+vendor/
+
+## Others
+.DS_Store
+venv
+.venv
