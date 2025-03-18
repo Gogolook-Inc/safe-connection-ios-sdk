@@ -1,6 +1,12 @@
 # Safe Connection
 Safe Connection iOS SDK
 
+- [Usage](#Usage)
+- [Installation](#Installation)
+- [Required](#Required)
+
+## Usage
+
 ## Installation
 ### Swift Package Manager
 #### Xcode Project
