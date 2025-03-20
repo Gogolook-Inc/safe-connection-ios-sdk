@@ -1,11 +1,15 @@
-# Safe Connection
-Safe Connection iOS SDK
+# SafeConnection
+
+SafeConnection iOS SDK
 
 - [Usage](#Usage)
 - [Installation](#Installation)
 - [Required](#Required)
 
 ## Usage
+``` swift
+import SafeConnection
+```
 
 ## Installation
 ### Swift Package Manager
@@ -25,7 +29,7 @@ dependencies: [
 ```
 ### CocoaPods
 ``` ruby
-pod 'SafeConnection', :git => 'https://github.com/Gogolook-Inc/safe-connection-ios-sdk', :tag => '0.1.0'
+pod "SafeConnection", :git => "https://github.com/Gogolook-Inc/safe-connection-ios-sdk", :tag => "0.1.0"
 ```
 
 ## Required
