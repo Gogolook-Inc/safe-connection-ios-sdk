@@ -21,7 +21,7 @@ import SafeConnection
 // ...
 // Add SafeConnection as a dependency
 dependencies: [
-    .package(url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk", .upToNextMajor(from: "0.1.0"))
+    .package(url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk", .upToNextMajor(from: "0.2.2"))
 ]
 // ...
 // Add SafeConnection to your target
@@ -29,7 +29,7 @@ dependencies: [
 ```
 ### CocoaPods
 ``` ruby
-pod "SafeConnection", :git => "https://github.com/Gogolook-Inc/safe-connection-ios-sdk", :tag => "0.1.0"
+pod "SafeConnection", :git => "https://github.com/Gogolook-Inc/safe-connection-ios-sdk", :tag => "0.2.2"
 ```
 
 ## Required
