@@ -10,8 +10,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "SafeConnection",
-            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.3.0/SafeConnection.xcframework.zip",
-            checksum: "0347a4b7d560a5f92e441b9b0b5671cb586202e688ce9b73dc27192d6ec3c930"
+            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.4.0/SafeConnection.xcframework.zip",
+            checksum: "5608a7c9e4ec8535327999c444f99fb678480f473272cfbe394a5116be21dbe6"
         ),
     ]
 )
