@@ -21,7 +21,7 @@ let package = Package(
         .binaryTarget(
             name: "SafeConnectionBinary",
             url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.7/SafeConnection.xcframework.zip",
-            checksum: "730c5b06679531e53741c71c2a2198ccc9952fe56d3697912fcce734d312fb65"
+            checksum: "54dba37a8189c2baf4b74d7318866d5ef7a4423e8746b3b29bfabd2b8208f6c3"
         ),
         .target(
             name: "SafeConnection",
