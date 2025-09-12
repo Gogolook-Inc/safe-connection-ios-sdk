@@ -13,15 +13,16 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "SafeConnectionBinary",
-            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.3/SafeConnection.xcframework.zip",
-            checksum: "4e0b1b58737ef63ab5fc462f512e353cd195f198ec1bc4c6440b5a335d365c66"
+            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.4/SafeConnection.xcframework.zip",
+            checksum: "f320274e4d63edef4801883ce40d4dc16e87fc8ae3ff1e960726e6f9035f5b54"
         ),
         .target(
             name: "SafeConnection",
             dependencies: [
                 .target(name: "SafeConnectionBinary"),
                 .product(name: "RealmSwift", package: "realm-swift")
-            ]
+            ],
+            path: "."
         )
     ]
 )
