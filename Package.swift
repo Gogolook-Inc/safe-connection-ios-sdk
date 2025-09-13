@@ -8,7 +8,7 @@ let package = Package(
         .iOS("15.5"),
     ],
     products: [
-        .library(name: "SafeConnection", targets: ["SafeConnection"]),
+        .library(name: "SafeConnection", targets: ["SafeConnection_Aggregation"]),
     ],
     dependencies: [
         .package(url: "https://github.com/Moya/Moya", from: "15.0.3"),
@@ -19,14 +19,14 @@ let package = Package(
     ],
     targets: [
         .binaryTarget(
-            name: "SafeConnectionBinary",
-            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.9/SafeConnection.xcframework.zip",
-            checksum: "e0c839c66de6fc94d0ab4af55f591301dcd21b87ad5171febe24616a41949bfc"
+            name: "SafeConnection",
+            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.10/SafeConnection.xcframework.zip",
+            checksum: "33e82ab8c6e2a6b1caf3256ed3f78e88a3632769fd5a1778b90686828ee620db"
         ),
         .target(
-            name: "SafeConnection",
+            name: "SafeConnection_Aggregation",
             dependencies: [
-                .target(name: "SafeConnectionBinary"),
+                .target(name: "SafeConnection"),
                 .product(name: "Moya", package: "Moya"),
                 .product(name: "PhoneNumberKit-Dynamic", package: "PhoneNumberKit"),
                 // .product(name: "RealmSwift", package: "realm-swift"), // Removed for testing
