@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SafeConnection"
-  s.version      = "0.5.11"
+  s.version      = "0.5.12"
   s.summary      = "SafeConnection"
   s.description  = "SafeConnection iOS SDK"
   s.homepage     = "https://www.gogolook.com/"
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '15.5'
 
-  s.source = { :http => 'https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.11/SafeConnection.xcframework.zip' }
+  s.source = { :http => 'https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.12/SafeConnection.xcframework.zip' }
 
   s.vendored_frameworks = 'SafeConnection.xcframework'
 
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.dependency 'SSZipArchive', '>= 2.6.0'
 
   s.prepare_command = <<-CMD
-    curl -L -o SafeConnection.xcframework.zip 'https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.11/SafeConnection.xcframework.zip'
+    curl -L -o SafeConnection.xcframework.zip 'https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.12/SafeConnection.xcframework.zip'
     unzip SafeConnection.xcframework.zip
     rm -f SafeConnection.xcframework.zip
   CMD
