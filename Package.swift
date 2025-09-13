@@ -20,15 +20,15 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "SafeConnection",
-            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.10/SafeConnection.xcframework.zip",
-            checksum: "33e82ab8c6e2a6b1caf3256ed3f78e88a3632769fd5a1778b90686828ee620db"
+            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.11/SafeConnection.xcframework.zip",
+            checksum: "1b6fee7537b9edaef19571100b917576c1e5e75883fd9b40b4dc868eb1c3f980"
         ),
         .target(
             name: "SafeConnection_Aggregation",
             dependencies: [
                 .target(name: "SafeConnection"),
                 .product(name: "Moya", package: "Moya"),
-                .product(name: "PhoneNumberKit-Dynamic", package: "PhoneNumberKit"),
+                .product(name: "PhoneNumberKit", package: "PhoneNumberKit"),
                 // .product(name: "RealmSwift", package: "realm-swift"), // Removed for testing
                 .product(name: "ZipArchive", package: "ZipArchive"),
             ],
