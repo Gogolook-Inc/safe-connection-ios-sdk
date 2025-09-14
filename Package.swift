@@ -12,7 +12,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Moya/Moya", exact: "15.0.3"),
-        .package(url: "https://github.com/marmelroy/PhoneNumberKit", exact: "4.1.3"),
+        .package(url: "https://github.com/marmelroy/PhoneNumberKit", exact: "4.1.4"),
 //      .package(url: "https://github.com/realm/realm-swift.git", exact: "10.54.5"), // Removed for testing
 //      .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.58.2"),
         .package(url: "https://github.com/ZipArchive/ZipArchive", exact: "2.6.0"),
@@ -20,8 +20,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "SafeConnection",
-            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.13/SafeConnection.xcframework.zip",
-            checksum: "c513dc560efa017069cc8e33e02976aa2c629cb5440cf62ecf375fe65a6f3d7d"
+            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.14/SafeConnection.xcframework.zip",
+            checksum: "11b64beb0b76ebbaced89a78406dc5b5d4ce14fde60ee4e1a6d19eb9fd2232d9"
         ),
         .target(
             name: "SafeConnection_Aggregation",
