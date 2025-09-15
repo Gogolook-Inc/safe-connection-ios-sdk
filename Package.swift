@@ -5,33 +5,26 @@ import PackageDescription
 let package = Package(
     name: "SafeConnection",
     platforms: [
-        .iOS("15.5"),
+        .iOS(.v18.5),
     ],
     products: [
-        .library(name: "SafeConnection", targets: ["SafeConnection_Aggregation"]),
+        .library(name: "SafeConnection", targets: ["SafeConnection"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Moya/Moya", exact: "15.0.3"),
-        .package(url: "https://github.com/marmelroy/PhoneNumberKit", exact: "4.1.4"),
         .package(url: "https://github.com/realm/realm-swift.git", exact: "10.54.5"),
-//      .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.58.2"),
-        .package(url: "https://github.com/ZipArchive/ZipArchive", exact: "2.6.0"),
     ],
     targets: [
-        .binaryTarget(
-            name: "SafeConnection",
-            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.16/SafeConnection.xcframework.zip",
-            checksum: "6982c931bf9f9c2d9568e3d54d3d2e5c3ce7db49c2930c389a8ac563edba034d"
-        ),
         .target(
-            name: "SafeConnection_Aggregation",
+            name: "SafeConnection",
             dependencies: [
-                .target(name: "SafeConnection"),
-                .product(name: "Moya", package: "Moya"),
-                .product(name: "PhoneNumberKit-Dynamic", package: "PhoneNumberKit"),
+                .target(name: "SafeConnectionBinary"),
                 .product(name: "RealmSwift", package: "realm-swift"),
-                .product(name: "ZipArchive", package: "ZipArchive"),
             ],
-        )
+        ),
+        .binaryTarget(
+            name: "SafeConnectionBinary",
+            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.17/SafeConnection.xcframework.zip",
+            checksum: "2b19a069e72fca84159e026cf5a51b550af9e39fa622316c632645c8ba46aa20"
+        ),
     ]
 )
