@@ -8,23 +8,23 @@ let package = Package(
         .iOS(.v16),
     ],
     products: [
-        .library(name: "SafeConnection", targets: ["SafeConnection"]),
+        .library(name: "SafeConnection", targets: ["SafeConnection_Aggregation"]),
     ],
     dependencies: [
         .package(url: "https://github.com/realm/realm-swift.git", exact: "10.54.5"),
     ],
     targets: [
         .target(
-            name: "SafeConnection",
+            name: "SafeConnection_Aggregation",
             dependencies: [
-                .target(name: "SafeConnectionBinary"),
+                .target(name: "SafeConnection"),
                 .product(name: "RealmSwift", package: "realm-swift"),
             ],
         ),
         .binaryTarget(
-            name: "SafeConnectionBinary",
-            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.18/SafeConnection.xcframework.zip",
-            checksum: "ba30269c4bac998536abd77963e692da1f5c145f36232490da71e01f3640a596"
+            name: "SafeConnection",
+            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.19/SafeConnection.xcframework.zip",
+            checksum: "d7d2531963870b984b6b648767a53d2484dbb98de77ee7462c2d84364cd2f96b"
         ),
     ]
 )
