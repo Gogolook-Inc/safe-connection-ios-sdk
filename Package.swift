@@ -1,4 +1,4 @@
-// swift-tools-version: 5.10
+// swift-tools-version: 5.9
 
 import PackageDescription
 
@@ -23,8 +23,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "SafeConnection",
-            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.20/SafeConnection.xcframework.zip",
-            checksum: "776321fc56bf64638e6c13024d030a1f5c8e8e99064fbd616b477849d873ed69"
+            url: "https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.21/SafeConnection.xcframework.zip",
+            checksum: "127437298bc3610c1781302c6f7f2b13065358152c5854e0aa1292f52c9c06b5"
         ),
     ]
 )
