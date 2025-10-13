@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SafeConnection"
-  s.version      = "0.5.25"
+  s.version      = "0.5.26"
   s.summary      = "SafeConnection"
   s.description  = "SafeConnection iOS SDK"
   s.homepage     = "https://www.gogolook.com/"
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.swift_version = '5.9'
 
   s.source = { 
-    :http => 'https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.25/SafeConnection.xcframework.zip',
+    :http => 'https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.26/SafeConnection.xcframework.zip',
     :sha256 => '@@CHECKSUM@@'
   }
 
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 
   s.prepare_command = <<-CMD
     # Download the XCFramework
-    curl -L -o SafeConnection.xcframework.zip 'https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.25/SafeConnection.xcframework.zip'
+    curl -L -o SafeConnection.xcframework.zip 'https://github.com/Gogolook-Inc/safe-connection-ios-sdk/releases/download/0.5.26/SafeConnection.xcframework.zip'
     
     # Verify checksum
     echo "@@CHECKSUM@@  SafeConnection.xcframework.zip" | shasum -a 256 -c || exit 1
