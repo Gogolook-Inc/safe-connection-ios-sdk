@@ -390,15 +390,7 @@ switch result {
 case .success:
     print("Block successful")
 case .failure(let error):
-    // Check error message for specific error type
-    let message = error
-    if message.contains("500") || message.contains("limit") {
-        print("Maximum blocking limit reached (500 numbers)")
-    } else if message.contains("already") {
-        print("Number is already blocked")
-    } else {
-        print("Block failed: \(message)")
-    }
+    print("Block failure: \(error)")
 }
 ```
 
@@ -437,7 +429,6 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         
         SafeConnectionSDK.loadPersonalIdentificationEntries(context: context)
         
-        // IMPORTANT: Must call completeRequest() to finish the extension request
         context.completeRequest()
     }
 }
@@ -1034,29 +1025,6 @@ do {
 }
 ```
 
-### HTTP Error Codes
-
-For network-related operations, you can check HTTP status codes:
-
-```swift
-do {
-    let result = try await sdk.search(e164: "+886912345678")
-} catch let error as NSError {
-    switch error.code {
-    case 401:
-        print("Unauthorized - Invalid credentials")
-    case 403:
-        print("Forbidden - Token expired or invalid")
-    case 404:
-        print("Not found")
-    case 500...599:
-        print("Server error")
-    default:
-        print("Error: \(error)")
-    }
-}
-```
-
 ### SafeConnectionSDK.Options.Error
 
 Configuration errors when initializing the SDK:
@@ -1127,7 +1095,7 @@ case .failure(let error):
 |------|-------|
 | Number Format | E.164 format recommended (e.g., `+886912345678`) |
 | Authentication | Valid License ID required |
-<!-- | API Rate Limit | TODO: Add Rate Limit --> |
+<!-- | API Rate Limit | TODO: Add Rate Limit -->
 
 ### Personal Blocking
 
@@ -1149,53 +1117,6 @@ case .failure(let error):
 |------|-------|
 | Result Cache | Same URL scan results cached for 1 day |
 | Network Requirement | Network connection required for first scan |
-
----
-
-## Complete Integration Example
-
-Here is a complete Call Directory Extension example that integrates offline database, personal blocking, and personal identification features:
-
-```swift
-import CallKit
-import SafeConnection
-
-class CallDirectoryHandler: CXCallDirectoryProvider {
-    
-    // IMPORTANT: SDK must be initialized in the extension's init()
-    override init() {
-        super.init()
-        do {
-            try SafeConnectionSDK.configure()
-        } catch {
-            print("SDK initialization failed: \(error)")
-        }
-    }
-    
-    override func beginRequest(with context: CXCallDirectoryExtensionContext) {
-        context.delegate = self
-        
-        // 1. Load offline database (caller identification + block high-risk numbers)
-        SafeConnectionSDK.loadDbEntries(context: context, blockTopSpamNumbers: true)
-        
-        // 2. Load personal blocking list
-        SafeConnectionSDK.loadPersonalBlockingEntries(context: context)
-        
-        // 3. Load personal identification list
-        SafeConnectionSDK.loadPersonalIdentificationEntries(context: context)
-        
-        // IMPORTANT: Must call completeRequest() to finish the extension request
-        context.completeRequest()
-    }
-}
-
-extension CallDirectoryHandler: CXCallDirectoryExtensionContextDelegate {
-    func requestFailed(for extensionContext: CXCallDirectoryExtensionContext, 
-                       withError error: Error) {
-        print("Call Directory Extension request failed: \(error)")
-    }
-}
-```
 
 ---
 
